@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "AutoTV",
+    "name": "珠江台",
     "slug": "autotv",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -32,6 +32,12 @@
         "projectId": "d69fef41-0e8e-477c-ae88-faa0d8ac7b9c"
       }
     },
-    "owner": "bennyshi"
+    "owner": "bennyshi",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/d69fef41-0e8e-477c-ae88-faa0d8ac7b9c"
+    }
   }
 }
