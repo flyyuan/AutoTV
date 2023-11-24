@@ -18,6 +18,7 @@ export default function App() {
       <WebView
         style={styles.fullScreen}
         source={{ uri: "https://www.gdtv.cn/tvChannelDetail/44" }}
+        mediaPlaybackRequiresUserAction={false}
       />
     </View>
   );
