@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "AutoTV",
-    "slug": "AutoTV",
+    "slug": "autotv",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -21,10 +21,17 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.bennyshi.autotv"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "d69fef41-0e8e-477c-ae88-faa0d8ac7b9c"
+      }
+    },
+    "owner": "bennyshi"
   }
 }

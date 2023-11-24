@@ -1,20 +1,24 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+import { StatusBar } from "expo-status-bar";
+import { StyleSheet, View, Text } from "react-native";
+import { WebView } from "react-native-webview";
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+  },
+  fullScreen: {
+    flex: 1,
   },
 });
+
+export default function App() {
+  return (
+    <View style={styles.container}>
+      <StatusBar style="auto" />
+      <WebView
+        style={styles.fullScreen}
+        source={{ uri: "https://www.gdtv.cn/tvChannelDetail/44" }}
+      />
+    </View>
+  );
+}
