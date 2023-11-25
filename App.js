@@ -1,6 +1,8 @@
+import React, { useEffect, useRef } from "react";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, View, Text } from "react-native";
 import { WebView } from "react-native-webview";
+import * as ScreenOrientation from "expo-screen-orientation";
 
 const styles = StyleSheet.create({
   container: {
@@ -12,29 +14,35 @@ const styles = StyleSheet.create({
 });
 
 export default function App() {
-  webview = null;
+  const webviewRef = useRef(null);
+
+  useEffect(() => {
+    // 加载时的操作，比如设置 WebView
+
+    return () => {
+      // 组件卸载时的清理操作
+      if (webviewRef.current) {
+        webviewRef.current.stopLoading(); // 停止加载
+        // 进行其他必要的清理
+      }
+    };
+  }, []);
 
   handleLoad = () => {
     const INJECTED_JAVASCRIPT = `(function() {
       const videoPlayerDiv = document.querySelector('.video-player');
       if (videoPlayerDiv) {
         videoPlayerDiv.style.width = '100%';
-        videoPlayerDiv.style.height = '100vh';
+        videoPlayerDiv.style.height = '100%';
         videoPlayerDiv.style.position = 'absolute';
         videoPlayerDiv.style.top = '0';
         videoPlayerDiv.style.left = '0';
         videoPlayerDiv.style.zIndex = '9999';
       }
-      var video = document.querySelector('video');
-      video && video.addEventListener('play', function() {
-        if (video.requestFullscreen) {
-          video.requestFullscreen();
-        }
-      });
     })();`;
 
-    if (this.webview) {
-      this.webview.injectJavaScript(INJECTED_JAVASCRIPT);
+    if (webviewRef.current) {
+      webviewRef.current.injectJavaScript(INJECTED_JAVASCRIPT);
     }
   };
 
@@ -43,9 +51,9 @@ export default function App() {
       <StatusBar style="auto" />
       <WebView
         style={styles.fullScreen}
-        source={{ uri: "https://m.gdtv.cn/tvChannelDetail/44" }}
+        source={{ uri: "https://m.gdtv.cn/tvChannelDetail/100" }}
         mediaPlaybackRequiresUserAction={false}
-        ref={(ref) => (this.webview = ref)}
+        ref={webviewRef}
         onLoad={this.handleLoad}
         allowsFullscreenVideo
         javaScriptEnabled={true}
