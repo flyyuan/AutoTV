@@ -4,9 +4,11 @@
 
 使用 Webview 加载珠江台的官方URL，设置 APP 为横屏，把 video 组件设置为全屏并盖在顶部
 
+<img src="./assets/iShot_2023-11-25_14.48.04.gif" />
+
 ## 安装
 
-  1. [下载 apk](https://github.com/flyyuan/AutoTV/releases/tag/1.0.0)
+  1. [下载 apk](https://github.com/flyyuan/AutoTV/releases)
   2. 在电视上使用 adb 安装, adb 使用参考 [Install an app](https://developer.android.com/tools/adb#move)
 
 ## 使用
