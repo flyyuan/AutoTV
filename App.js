@@ -16,6 +16,15 @@ export default function App() {
 
   handleLoad = () => {
     const INJECTED_JAVASCRIPT = `(function() {
+      const videoPlayerDiv = document.querySelector('.video-player');
+      if (videoPlayerDiv) {
+        videoPlayerDiv.style.width = '100%';
+        videoPlayerDiv.style.height = '100vh';
+        videoPlayerDiv.style.position = 'absolute';
+        videoPlayerDiv.style.top = '0';
+        videoPlayerDiv.style.left = '0';
+        videoPlayerDiv.style.zIndex = '9999';
+      }
       var video = document.querySelector('video');
       video && video.addEventListener('play', function() {
         if (video.requestFullscreen) {
@@ -34,7 +43,7 @@ export default function App() {
       <StatusBar style="auto" />
       <WebView
         style={styles.fullScreen}
-        source={{ uri: "https://www.gdtv.cn/tvChannelDetail/44" }}
+        source={{ uri: "https://m.gdtv.cn/tvChannelDetail/44" }}
         mediaPlaybackRequiresUserAction={false}
         ref={(ref) => (this.webview = ref)}
         onLoad={this.handleLoad}

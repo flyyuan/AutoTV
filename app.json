@@ -3,7 +3,7 @@
     "name": "珠江台",
     "slug": "autotv",
     "version": "1.0.0",
-    "orientation": "portrait",
+    "orientation": "landscape",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
