@@ -51,7 +51,7 @@ export default function App() {
       <StatusBar style="auto" />
       <WebView
         style={styles.fullScreen}
-        source={{ uri: "https://m.gdtv.cn/tvChannelDetail/100" }}
+        source={{ uri: "https://m.gdtv.cn/tvChannelDetail/44" }}
         mediaPlaybackRequiresUserAction={false}
         ref={webviewRef}
         onLoad={this.handleLoad}
