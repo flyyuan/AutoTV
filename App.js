@@ -38,6 +38,9 @@ export default function App() {
         mediaPlaybackRequiresUserAction={false}
         ref={(ref) => (this.webview = ref)}
         onLoad={this.handleLoad}
+        allowsFullscreenVideo
+        javaScriptEnabled={true}
+        domStorageEnabled={true}
       />
     </View>
   );
