@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from "react";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, View, Text } from "react-native";
 import { WebView } from "react-native-webview";
-import * as ScreenOrientation from "expo-screen-orientation";
 
 const styles = StyleSheet.create({
   container: {
@@ -31,11 +30,10 @@ export default function App() {
   handleLoad = () => {
     const INJECTED_JAVASCRIPT = `(function() {
       setTimeout(()=>{
-            var xpath = '/html/body/div/div/div/div[3]/div/div/div/div[1]/div[1]';
-        var videoPlayerDiv = document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+        var videoPlayerDiv = document.querySelector("#video");
               if (videoPlayerDiv) {
                 videoPlayerDiv.style.width = '100vw';
-                videoPlayerDiv.style.height = '100vh';
+                videoPlayerDiv.style.height = '98vh';
                 videoPlayerDiv.style.position = 'fixed';
                 videoPlayerDiv.style.top = '0';
                 videoPlayerDiv.style.left = '0';
